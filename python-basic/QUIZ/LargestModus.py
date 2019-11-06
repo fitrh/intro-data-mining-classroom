@@ -1,5 +1,5 @@
 def main():
-    modus = 0
+    modus = None
     num = []
     length = int(input("Length : "))
     for i in range(0, length):
@@ -16,9 +16,12 @@ def main():
                 n += 1
         if n >= appearence and n != 1:
             appearence = n
-            modus = i if i > modus else modus
+            if modus == None:
+                modus = i
+            else:
+                modus = i if i > modus else modus
 
-    print("Max Modus %s" % modus if modus > 0 else "Tidak Ada Modus")
+    print("Largest Modus %s" % modus if modus != None else "Tidak Ada Modus")
 
 
 if __name__ == "__main__":
