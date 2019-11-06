@@ -16,11 +16,7 @@ def main():
                 n += 1
         if n >= appearence and n != 1:
             appearence = n
-            if modus == None:
-                modus = i
-            else:
-                modus = i if i > modus else modus
-
+            modus = i if modus is None else i if i > modus else modus
     print("Largest Modus %s" % modus if modus != None else "Tidak Ada Modus")
 
 
